@@ -2,7 +2,7 @@ SUMMARY = "Go programming language compiler"
 HOMEPAGE = " http://golang.org/"
 LICENSE = "BSD-3-Clause"
 
-inherit native goarch
+inherit goarch
 
 INHIBIT_PACKAGE_DEBUG_SPLIT = "1"
 INHIBIT_PACKAGE_STRIP = "1"
@@ -14,8 +14,8 @@ RDEPENDS_${PN} = "bash"
 SYSROOT_DIRS_NATIVE += "${prefix}"
 
 SRC_URI = "https://go.dev/dl/go${PV}.${BUILD_GOOS}-${BUILD_GOARCH}.tar.gz"
-LIC_FILES_CHKSUM = "file://LICENSE;md5=5d4950ecb7b26d2c5e4e7b4e0dd74707"
-SRC_URI[sha256sum] = "bd78114b0d441b029c8fe0341f4910370925a4d270a6a590668840675b0c653e"
+LIC_FILES_CHKSUM = "file://LICENSE;md5=7998cb338f82d15c0eff93b7004d272a"
+SRC_URI[sha256sum] = "cb2396bae64183cdccf81a9a6df0aea3bce9511fc21469fb89a0c00470088073"
 S = "${WORKDIR}/go"
 
 do_install() {
@@ -30,3 +30,5 @@ do_install() {
 
     find ${D}${prefix}/go/src -depth -type d -name testdata -exec rm -rf {} \;
 }
+
+inherit native

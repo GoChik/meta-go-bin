@@ -1,6 +1,6 @@
 inherit goarch
 
-DEPENDS_append = " go-precompiled-native"
+DEPENDS:append = " go-precompiled-native"
 
 GOBIN_LDFLAGS ?= "-w"
 GOBIN_BUILDFLAGS ?= "-trimpath"
